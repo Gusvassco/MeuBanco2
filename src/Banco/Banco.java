@@ -1,5 +1,6 @@
 package Banco;
 
+
 public class Banco {
     private String nome;
     private Num codigo;
