@@ -12,23 +12,7 @@ public class Funcionando {
     Scanner scan = new Scanner(System.in);
     Cliente cliente1 =new Cliente("Gustavo Henerique", 20, "Marisa de Souza", 500, 1300);
 
-    public void PainelOP2(){
-        System.out.println("========== Alterar informações =========="+"\n"+
-                "Escolha uma opção: " +"\n"+
-                "1. Alterar nome"+"\n"+
-                "2. Alterar idade"+"\n"+
-                "3. Alterar nome da mãe" + "\n" +
-                "4. Retornar");
-
-    }
-
-    public void AlterandoInfoNOME(){
-        System.out.println("========== Alterando NOME! ==========");
-        System.out.print("Digite o novo nome: ");
-        cliente1.setNome(scan.nextLine());
-        System.out.println("\n"+"\n");
-        System.out.println("Nome alterado para " + cliente1.getNome() + "!");
-
+    public void PainelOP3(){
 
     }
     public void rodando(){
@@ -39,8 +23,7 @@ public class Funcionando {
         switch (cont){
             case 1:
                 VerInformacoesOP1();
-                System.out.print("\n"+"- Digite algo para retornar ao menu: ");
-                scan.nextLine();
+                System.out.print("\n"+"- Digite uma tecla para retornar ao menu: ");                scan.nextLine();
                 break;
 
 
@@ -52,8 +35,19 @@ public class Funcionando {
                 switch (cont1){
                     case 1:
                         AlterandoInfoNOME();
-                        System.out.print("\n"+"- Digite algo para retornar ao menu: ");
+                        System.out.print("\n"+"- Digite uma tecla para retornar ao menu: ");                        scan.nextLine();
+                        break;
+                    case 2:
+                        AlterandoInfoIDADE();
+                        System.out.print("\n"+"- Digite uma tecla para retornar ao menu: ");                        scan.nextLine();
+                        break;
+
+                    case 3:
+                        AlterandoInfoNOMEDAMAE();
+                        System.out.print("\n"+"- Digite uma tecla para retornar ao menu: ");
                         scan.nextLine();
+                        break;
+                    case 4:
                         break;
                 }
       //      case 3:
@@ -78,9 +72,44 @@ public class Funcionando {
 
 
     }
-
     public void VerInformacoesOP1(){
         System.out.println(cliente1);
     }
+    public void PainelOP2(){
+        System.out.println("========== Alterar informações =========="+"\n"+
+                "Escolha uma opção: " +"\n"+
+                "1. Alterar nome"+"\n"+
+                "2. Alterar idade"+"\n"+
+                "3. Alterar nome da mãe" + "\n" +
+                "4. Retornar");
 
+    }
+
+    public void AlterandoInfoNOME(){
+        System.out.println("========== Alterando NOME! ==========");
+        System.out.print("Digite o novo nome: ");
+        cliente1.setNome(scan.nextLine());
+        System.out.println("\n"+"\n");
+        System.out.println("Nome alterado para " + cliente1.getNome() + "!");
+
+
+    }
+
+    public void AlterandoInfoIDADE(){
+        System.out.println("========== Alterando IDADE! ==========");
+        System.out.print("Digite a nova idade: ");
+        cliente1.setIdade(scan.nextInt());
+        scan.nextLine();
+        System.out.println("\n"+"\n");
+        System.out.println("Idade alterada para " + cliente1.getIdade() + "!");
+    }
+
+    public void AlterandoInfoNOMEDAMAE(){
+        System.out.println("========== Alterando NOME DA MÃE! ==========");
+        System.out.print("Digite o nome da mãe: ");
+        cliente1.setNomeDaMae(scan.nextLine());
+        System.out.println("\n"+"\n");
+        System.out.println("Nome alterado para " + cliente1.getNomeDaMae() + "!");
+
+    }
 }
